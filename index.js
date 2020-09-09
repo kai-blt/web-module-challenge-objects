@@ -75,13 +75,25 @@ console.log(reviews[5].feedback);
 
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
-reviews.push({name: 'Brendan', rating: 5, feedback: 'Good ambiance and high quality food.' })
+reviews.push({name: 'Brendan', rating: 5, feedback: 'Good ambiance and high quality food.' });
 console.table(reviews);
 
 
 
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
+
+//Using if statement
+// reviews.forEach(item => {
+//   if (item.name === 'Reyna') {
+//     item.feedback = 'this place is chill with really cool people, great for getting work done on weekdays';
+//   }
+// });
+
+//Using Ternary Operator
+reviews.forEach(item => item.name === 'Reyna' ? item.feedback = 'this place is chill with really cool people, great for getting work done on weekdays' : 'none');
+console.table(reviews);
+
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
