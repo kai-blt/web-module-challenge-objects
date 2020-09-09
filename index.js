@@ -16,7 +16,7 @@ function createMenuItem(name, price, category){
       category: category});
 }
 createMenuItem('Ultimate Burger', 20, 'Dinner');
-console.log(restaurantMenu);
+console.table(restaurantMenu);
 
 
 
@@ -26,7 +26,7 @@ console.log(restaurantMenu);
 createMenuItem('Old Fashioned', 20, 'Drinks');
 createMenuItem('Moscow Mule', 10, 'Drinks');
 createMenuItem('Whiskey', 15, 'Drinks');
-console.log(restaurantMenu);
+console.table(restaurantMenu);
 
 
 
@@ -75,6 +75,10 @@ console.log(reviews[5].feedback);
 
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
+reviews.push({name: 'Brendan', rating: 5, feedback: 'Good ambiance and high quality food.' })
+console.table(reviews);
+
+
 
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
