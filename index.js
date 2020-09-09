@@ -8,11 +8,11 @@ const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakf
 
 const restaurantMenu = []; //create array to hold menu objects
 
-function createMenuItem(name, cost, category){
+function createMenuItem(name, price, category){
   //push menu objects to the restaurant array
   restaurantMenu.push({
       name: name,
-      cost: cost,
+      price: price,
       category: category});
 }
 createMenuItem('Ultimate Burger', 20, 'Dinner');
@@ -40,6 +40,20 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+
+burger.discount = function(discountType) {
+  if (discountType === 'teacher' || discountType === 'student') {
+    return `You\'re a ${discountType}! Your cost is: ` + this.price * .75;
+  } else {
+    return 'You\'re a regular joe. Your cost is: ' + this.price * .9;
+  }
+};
+console.log(burger.discount('student'));
+console.log(burger.discount('public'));
+
+
+
+
 
 
 
