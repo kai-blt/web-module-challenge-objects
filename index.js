@@ -173,13 +173,13 @@ and should return an array of objects.
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
   function getLongReviews(arr) {
-    return arr.filter(item => item.feedback.split(' ').length >= 15);
+    return arr.filter(item => item.feedback.split(' ').length >= 15); //split array item into new array with each word as an indexed item. Count length of new array.
   }
   console.table(getLongReviews(reviews));
 
 
 
-  
+
 
 /* STRETCH 3:  This challenge is not related to the data above! 
 
@@ -198,8 +198,16 @@ The returned object should have the following characteristics:
          (2) returns the updated value of the `odometer`.
 */
 
-
-function carMaker(/* code here */) {
-    /* code here */
-    
+let car = {};
+function carMaker(mileage) {
+  car = {
+    name: 'car',
+    odometer: mileage,
+    drive: function(distance) {
+        this.odometer += distance;
+        return `Adding miles driven ${distance.toLocaleString()} to odometer. New mileage: ${this.odometer.toLocaleString()}`; //toLocaleString returns language sensitive version of a number!
+    }
+  }
+  return car;    
 }
+console.table(carMaker(1000));
